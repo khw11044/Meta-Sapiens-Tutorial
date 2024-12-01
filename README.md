@@ -25,11 +25,7 @@ Please give it a thumbs up!
 
 <img src="https://github.com/user-attachments/assets/5c0b2178-5283-49fd-8205-a111b53b81b8" width="50%" height="50%" />
 
-<img src="https://github.com/user-attachments/assets/a44caf87-ce5a-417c-9a6a-28a7bdef5334)" width="50%" height="50%" />
-
-![image](https://github.com/user-attachments/assets/5c0b2178-5283-49fd-8205-a111b53b81b8)
-
-![image](https://github.com/user-attachments/assets/a44caf87-ce5a-417c-9a6a-28a7bdef5334)
+<img src="https://github.com/user-attachments/assets/a44caf87-ce5a-417c-9a6a-28a7bdef5334" width="50%" height="50%" />
 
 
 ## 시작하기 
