@@ -1,7 +1,5 @@
 # Meta - sapiens - Tutorial 
 
-[sapiens Github](https://github.com/facebookresearch/sapiens?tab=readme-ov-file)
-
 
 sapiens 공식 깃헙을 보면, 어떻게 시작해야할지 막막합니다.
 
@@ -19,6 +17,16 @@ Even after searching on Google, it’s challenging to find tutorials or basic Co
 So, I decided to create a simple example code myself.
 
 Please give it a thumbs up!
+
+## 결과 
+
+![image](https://github.com/user-attachments/assets/164a703b-d788-4eb6-8d20-65b7fa9c74ab)
+
+![image](https://github.com/user-attachments/assets/5c0b2178-5283-49fd-8205-a111b53b81b8)
+
+![image](https://github.com/user-attachments/assets/a44caf87-ce5a-417c-9a6a-28a7bdef5334)
+
+[sapiens Github](https://github.com/facebookresearch/sapiens?tab=readme-ov-file)
 
 ## 시작하기 
 
@@ -40,4 +48,3 @@ chmod +x download2.sh
 
 ./download2.sh
 ```
-
