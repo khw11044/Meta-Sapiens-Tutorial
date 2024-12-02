@@ -57,6 +57,7 @@ if __name__ == "__main__":
     TASK = 'pose'
     VERSION = 'sapiens_0.3b'
     model_path = get_model_path(TASK, VERSION)  # Ensure `get_model_path` is defined
+    print('model_path:', model_path)
     pose_model = torch.jit.load(model_path)
     pose_model.eval()
     pose_model.to("cuda")

@@ -6,8 +6,8 @@ from PIL import Image, ImageDraw
 
 SAPIENS_LITE_MODELS_PATH = {
     "depth": {
-        "sapiens_0.3b": "checkpoints/depth/sapiens_0.3b_torchscript.pt2",
-        "sapiens_0.6b": "checkpoints/depth/sapiens_0.6b_torchscript.pt2",
+        "sapiens_0.3b": "./checkpoints/depth/sapiens_0.3b_torchscript.pt2",
+        "sapiens_0.6b": "./checkpoints/depth/sapiens_0.6b_torchscript.pt2",
         "sapiens_1b": "checkpoints/depth/sapiens_1b_torchscript.pt2",
     },
     "detector": {},
@@ -16,21 +16,27 @@ SAPIENS_LITE_MODELS_PATH = {
         "sapiens_0.6b": "checkpoints/normal/sapiens_0.6b_torchscript.pt2",
         "sapiens_1b": "checkpoints/normal/sapiens_1b_torchscript.pt2",
     },
-    "pose_coco": {
-        "sapiens_0.3b": "checkpoints/pose_coco/sapiens_0.3b_torchscript.pt2",    # sapiens_0.3b_coco_best_coco_AP_796_torchscript.pt2
-        "sapiens_0.6b": "checkpoints/pose_coco/sapiens_0.6b_torchscript.pt2",    # sapiens_0.6b_coco_best_coco_AP_812_torchscript.pt2
-        "sapiens_1b": "checkpoints/pose_coco/sapiens_1b_torchscript.pt2"         # sapiens_1b_coco_best_coco_AP_821_torchscript.pt2
-    },
-    "pose_goliath": {
-        "sapiens_0.3b": "checkpoints/pose_goliath/sapiens_0.3b_torchscript.pt2",  # sapiens_0.3b_goliath_best_goliath_AP_573_torchscript.pt2
-        "sapiens_0.6b": "checkpoints/pose_goliath/sapiens_0.6b_torchscript.pt2",  # sapiens_0.6b_goliath_best_goliath_AP_609_torchscript.pt2
-        "sapiens_1b": "checkpoints/pose_goliath/sapiens_1b_torchscript.pt2"       # sapiens_1b_goliath_best_goliath_AP_639_torchscript.pt2
-    },
     "seg": {
         "sapiens_0.3b": "checkpoints/seg/sapiens_0.3b_torchscript.pt2",
         "sapiens_0.6b": "checkpoints/seg/sapiens_0.6b_torchscript.pt2",
         "sapiens_1b": "checkpoints/seg/sapiens_1b_torchscript.pt2",
+    },
+    "pose": {
+        "sapiens_0.3b": "checkpoints/pose/sapiens_0.3b_torchscript.pt2",    # sapiens_0.3b_coco_best_coco_AP_796_torchscript.pt2
+        "sapiens_0.6b": "checkpoints/pose/sapiens_0.6b_torchscript.pt2",    # sapiens_0.6b_coco_best_coco_AP_812_torchscript.pt2
+        "sapiens_1b": "checkpoints/pose/sapiens_1b_torchscript.pt2"         # sapiens_1b_coco_best_coco_AP_821_torchscript.pt2
     }
+    # "pose_coco": {
+    #     "sapiens_0.3b": "checkpoints/pose_coco/sapiens_0.3b_torchscript.pt2",    # sapiens_0.3b_coco_best_coco_AP_796_torchscript.pt2
+    #     "sapiens_0.6b": "checkpoints/pose_coco/sapiens_0.6b_torchscript.pt2",    # sapiens_0.6b_coco_best_coco_AP_812_torchscript.pt2
+    #     "sapiens_1b": "checkpoints/pose_coco/sapiens_1b_torchscript.pt2"         # sapiens_1b_coco_best_coco_AP_821_torchscript.pt2
+    # },
+    # "pose_goliath": {
+    #     "sapiens_0.3b": "checkpoints/pose_goliath/sapiens_0.3b_torchscript.pt2",  # sapiens_0.3b_goliath_best_goliath_AP_573_torchscript.pt2
+    #     "sapiens_0.6b": "checkpoints/pose_goliath/sapiens_0.6b_torchscript.pt2",  # sapiens_0.6b_goliath_best_goliath_AP_609_torchscript.pt2
+    #     "sapiens_1b": "checkpoints/pose_goliath/sapiens_1b_torchscript.pt2"       # sapiens_1b_goliath_best_goliath_AP_639_torchscript.pt2
+    # }
+    
 }
 
 LABELS_TO_IDS = {
@@ -197,6 +203,7 @@ def visualize_keypoints(image, keypoints, keypoint_scores, threshold=0.3):
 def get_model_path(task, version):
     try:
         model_path = SAPIENS_LITE_MODELS_PATH[task][version]
+        print('model_path->', model_path)
         if not os.path.exists(model_path):
             print(f"Warning: The model file does not exist at {model_path}")
         return model_path
